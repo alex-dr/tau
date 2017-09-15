@@ -51,15 +51,30 @@ class Tau(object):
 
         self.desc = desc
 
-    def command(self, fn):
+    def command(self, fn, name=None):
         """Function decorator to create an interface command.
 
         An interface command is how we mark functions as Tau interface
         command or action to take.
 
         The command is added to the set of commands.
+
+        Parameters
+        ----------
+        name : string|None
+            Name of the command. Default is function name with _ > -
         """
-        self.commands.append(fn)
+        if name is None:
+            name = fn.__name__
+
+        name = name.replace('_', '-')
+
+        cmd = {
+            'name': name,
+            'fn': fn
+        }
+
+        self.commands.append(cmd)
 
         @wraps
         def wrapped(*args, **kwargs):
@@ -67,8 +82,7 @@ class Tau(object):
         return wrapped
 
     def argument(self, fn, **spec):
-        """Function decorator to create a command argument.
-        """
+        """Function decorator to create a command argument."""
         @wraps
         def wrapped(*args, **kwargs):
             fn(*args, **kwargs)

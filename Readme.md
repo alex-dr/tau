@@ -34,7 +34,7 @@ Nice work!
 Now you want to turn these functions into a CLI, or a REST API server, while still allowing other developers to use them in their own code.
 
 Everyone knows how to use libraries like Click and Flask to create powerful applications.
-However, you'd like to create multiple interfaces, with consistent input validation, and minimal boilerplate code.
+However, you'd like to create multiple interfaces, with consistent input validation and minimal boilerplate code.
 
 You'd also like to be able to set your parameter values as config files, environment variables, CLI flags, query parameters, or more.
 Surely there's some tool that can take some functions, their inputs, and their outputs, and create these interfaces for you automatically.
