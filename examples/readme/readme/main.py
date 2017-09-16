@@ -55,5 +55,5 @@ def cat(fname, loudly=False):
             return f.read()
 
 
-cli = tbar.click()
-app = tbar.flask()
+cli = tbar.cli()
+app = tbar.flaskapp()
