@@ -15,11 +15,11 @@ class Tau(object):
 
         >>> from tau import Tau
         >>> tbar = Tau()
-        >>> @tbar.command
+        >>> @tbar.command()
             def foo():
                 pass
-        >>> tbar.cli()
-        <click.core.Group at 0x7f9cf5739f50>
+        >>> tbar.get_provider('cli')
+        <tau.providers.cli.ClickProvider at 0x7f9cf5739f50>
 
     Providers are implementations of a simple interface for creating dynamic
     interfaces. In the example above, we create a Click Command-Line interface
