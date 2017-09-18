@@ -1,5 +1,9 @@
 # Tau
 
+Tau is a tool that allows you to create powerful interactive applications from your libraries without any boilerplate or repeated code.
+
+With `tau` a library of methods can quickly be turned into a Click CLI, a Flask web server, or any other application you can think of (and implement a `tau` provider for).
+
 ## Installation
 
 ```bash
