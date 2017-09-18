@@ -6,4 +6,4 @@ You probably want to do this:
 """
 from __future__ import absolute_import
 
-from .tau import Tau  # noqa
+from .tau import argument, Tau  # noqa

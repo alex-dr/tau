@@ -1,6 +1,6 @@
-from tau import Tau
+import tau
 
-tbar = Tau(desc='testing testing 123')
+tbar = tau.Tau(desc='testing testing 123')
 
 
 @tbar.command(name='baz')
@@ -10,9 +10,14 @@ def foo():
 
 
 @tbar.command()
-def bar():
+@tau.argument(
+    'eilo',
+    short='e',
+    desc='Meow.',
+)
+def bar(eilo):
     """Yet Another Beautiful docstring."""
-    print('hello {}'.format('asdf'))
+    print('hello {}'.format(eilo))
 
 
 cli = tbar.get_provider('cli')

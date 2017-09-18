@@ -9,5 +9,8 @@ class ClickProvider(click.Group):
 
 def _gen_click_commands(commands):
     """Generate click.Command objects from Tau commands."""
+    for name, fn in commands.items():
+        if hasattr(fn, '__tau_args__'):
+            raise NotImplemented
     return {name: click.command(name=name)(fn)
             for name, fn in commands.items()}

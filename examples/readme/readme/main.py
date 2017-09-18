@@ -41,10 +41,11 @@ def add(x, y):
     env_var='TAUDEMO_FILE',
     desc='Read the contents of a file on disk.',
 )
-@tau.option(
+@tau.argument(
     name='loudly',
     contract='bool',
     desc='Read a file',
+    optional=True,
 )
 def cat(fname, loudly=False):
     """Read a file, quietly?"""
